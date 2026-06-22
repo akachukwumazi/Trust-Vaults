@@ -153,7 +153,7 @@ export default function VaultPage() {
         <p className="text-gray-400">Current Balance</p>
 
         <h2 className="text-4xl font-bold text-indigo-400 mt-2">
-          ₦ {(vault.balance || 0).toLocaleString()}
+          $ {(vault.balance || 0).toLocaleString()}
         </h2>
 
         <div className="mt-4 flex flex-wrap gap-6 text-sm text-gray-500">
@@ -235,7 +235,7 @@ export default function VaultPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm text-gray-400 mb-2">Amount (₦)</label>
+              <label className="block text-sm text-gray-400 mb-2">Amount ($)</label>
               <input
                 type="number"
                 min="1"
@@ -257,7 +257,7 @@ export default function VaultPage() {
             </div>
           </div>
           <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-400">
-            ⚠️ Available balance: ₦{(vault.balance || 0).toLocaleString()}
+            ⚠️ Available balance: ${(vault.balance || 0).toLocaleString()}
           </div>
           <button
             onClick={handleWithdraw}

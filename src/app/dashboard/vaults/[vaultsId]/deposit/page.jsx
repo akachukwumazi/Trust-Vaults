@@ -67,7 +67,7 @@ export default function DepositPage() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to submit");
-      toast.success(`Deposit request of ₦${Number(amount).toLocaleString()} via ${method} submitted. Awaiting admin approval.`, { autoClose: 5000 });
+      toast.success(`Deposit request of $${Number(amount).toLocaleString()} via ${method} submitted. Awaiting admin approval.`, { autoClose: 5000 });
       setAmount("");
     } catch (err) {
       toast.error(err.message || "Failed to submit deposit");

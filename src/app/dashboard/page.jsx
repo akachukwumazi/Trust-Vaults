@@ -103,7 +103,7 @@ export default function Dashboard() {
               <h3 className="text-white font-semibold text-lg">{vault.name}</h3>
 
               <p className="text-indigo-400 text-2xl font-bold mt-3">
-                ₦ {vault.balance.toLocaleString()}
+                $ {vault.balance.toLocaleString()}
               </p>
 
               <div className="mt-3 space-y-1">

@@ -78,8 +78,8 @@ export async function PATCH(req) {
 
       // Log activity
       const actionMessage = tx.type === "deposit"
-        ? `🏦 Your deposit of ₦${tx.amount.toLocaleString()} has been confirmed`
-        : `Admin approved ${tx.type} of ₦${tx.amount.toLocaleString()}`;
+        ? `🏦 Your deposit of $${tx.amount.toLocaleString()} has been confirmed`
+        : `Admin approved ${tx.type} of $${tx.amount.toLocaleString()}`;
 
       await Activity.create({
         user: tx.user,
@@ -94,7 +94,7 @@ export async function PATCH(req) {
       await Activity.create({
         user: tx.user,
         vault: tx.vault._id,
-        action: `Admin rejected ${tx.type} of ₦${tx.amount.toLocaleString()}`,
+        action: `Admin rejected ${tx.type} of $${tx.amount.toLocaleString()}`,
         type: "money",
       });
     }

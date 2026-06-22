@@ -201,7 +201,7 @@ export default function AdminDashboard() {
           {[
             { label: "Accounts",    value: stats.totalUsers,          sub: "Registered users" },
             { label: "Vaults",      value: stats.totalVaults,         sub: "Active vaults" },
-            { label: "Assets",      value: `₦ ${stats.totalBalance.toLocaleString()}`, sub: "Total balance", gold: true },
+            { label: "Assets",      value: `$ ${stats.totalBalance.toLocaleString()}`, sub: "Total balance", gold: true },
             { label: "Time-Locked", value: stats.activeLocks,         sub: "Locked vaults" },
             { label: "Deposits",    value: stats.pendingDeposits,     sub: "Pending approval", badge: stats.pendingDeposits > 0 },
             { label: "Withdrawals", value: stats.pendingWithdrawals,  sub: "Pending approval", badge: stats.pendingWithdrawals > 0 },
@@ -316,7 +316,7 @@ export default function AdminDashboard() {
                             <td className="py-4 px-6"><Code>{v.inviteCode}</Code></td>
                             <td className="py-4 px-6 text-white/60 text-xs font-mono">{v.owner ? `${v.owner.name} (${v.owner.email})` : "—"}</td>
                             <td className="py-4 px-6 text-white/60 text-xs">👥 {v.members?.length || 1}</td>
-                            <td className="py-4 px-6 text-right font-mono text-yellow-500">₦ {(v.balance || 0).toLocaleString()}</td>
+                            <td className="py-4 px-6 text-right font-mono text-yellow-500">$ {(v.balance || 0).toLocaleString()}</td>
                             <td className="py-4 px-6">
                               {locked
                                 ? <Badge cls="bg-red-500/10 text-red-400 border-red-500/20">🔒 Until {new Date(v.lockUntil).toLocaleDateString()}</Badge>
@@ -453,7 +453,7 @@ function TxRow({ tx, processingId, onAction }) {
       <td className="py-4 px-6 text-white/60 text-xs">{tx.vault?.name || "—"}</td>
       <td className="py-4 px-6 text-white/50 text-xs">{tx.method || "—"}</td>
       <td className="py-4 px-6 text-right font-mono text-yellow-500 font-medium">
-        ₦ {tx.amount?.toLocaleString()}
+        $ {tx.amount?.toLocaleString()}
       </td>
       <td className="py-4 px-6">
         <span className={`px-2.5 py-0.5 rounded-full text-xs font-mono font-medium ${STATUS_STYLES[tx.status]}`}>

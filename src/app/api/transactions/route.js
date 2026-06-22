@@ -53,7 +53,7 @@ export async function POST(req) {
     await Activity.create({
       user: decoded.id,
       vault: vaultId,
-      action: `Submitted a ${type} request of ₦${Number(amount).toLocaleString()}`,
+      action: `Submitted a ${type} request of $${Number(amount).toLocaleString()}`,
       type: "money",
     });
 

@@ -54,7 +54,7 @@ export default function VaultsPage() {
           <div className="text-sm text-gray-400">
             Total Balance:{" "}
             <span className="text-indigo-400 font-semibold">
-              ₦ {totalBalance.toLocaleString()}
+              $ {totalBalance.toLocaleString()}
             </span>
           </div>
           <div className="flex gap-3">
@@ -139,7 +139,7 @@ export default function VaultsPage() {
 
               {/* Balance */}
               <p className="text-indigo-400 text-xl font-bold mt-3">
-                ₦ {(vault.balance || 0).toLocaleString()}
+                $ {(vault.balance || 0).toLocaleString()}
               </p>
 
               {/* Meta */}
